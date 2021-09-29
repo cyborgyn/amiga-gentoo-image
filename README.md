@@ -14,3 +14,5 @@ This is a cross compiled HDF image of a stripped down, minimalistic Gentoo insta
 * Motorola 68030 CPU or better with MMU
 * At least 10 MByte 32bit FastRAM (in a single block)
 * SCSI HDD with 1GByte space
+
+[@world installed packages](documentation/packages.md)
