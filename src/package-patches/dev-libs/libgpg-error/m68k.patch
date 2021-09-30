@@ -1,0 +1,36 @@
+--- libgpg-error-1.42/src/Makefile.am.old	2021-09-21 00:59:37.541252747 +0200
++++ libgpg-error-1.42/src/Makefile.am	2021-09-21 01:00:05.844415786 +0200
+@@ -57,6 +57,7 @@
+         syscfg/lock-obj-pub.i686-unknown-kfreebsd-gnu.h     \
+         syscfg/lock-obj-pub.i686-unknown-linux-gnu.h        \
+         syscfg/lock-obj-pub.m68k-unknown-linux-gnu.h        \
++        syscfg/lock-obj-pub.m68k-unknown-linux-musl.h       \
+         syscfg/lock-obj-pub.mips-unknown-linux-gnu.h        \
+         syscfg/lock-obj-pub.mips64el-unknown-linux-gnuabi64.h \
+         syscfg/lock-obj-pub.mips64-unknown-linux-gnuabi64.h \
+--- /dev/null	2021-09-19 12:07:14.191060048 +0200
++++ libgpg-error-1.42/src/syscfg/lock-obj-pub.m68k-unknown-linux-musl.h	2021-09-21 00:58:48.443966723 +0200
+@@ -0,0 +1,23 @@
++## lock-obj-pub.m68k-unknown-linux-gnu.h
++## File created by gen-posix-lock-obj - DO NOT EDIT
++## To be included by mkheader into gpg-error.h
++
++typedef struct
++{
++  long _vers;
++  union {
++    volatile char _priv[24];
++    long _x_align;
++    long *_xp_align;
++  } u;
++} gpgrt_lock_t;
++
++#define GPGRT_LOCK_INITIALIZER {1,{{0,0,0,0,0,0,0,0, \
++                                    0,0,0,0,0,0,0,0, \
++                                    0,0,0,0,0,0,0,0}}}
++##
++## Local Variables:
++## mode: c
++## buffer-read-only: t
++## End:
++##
