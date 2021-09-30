@@ -13,7 +13,7 @@ description="Mounts disks and swap according to /etc/fstab."
 
 depend()
 {
-	need fsck
+#	need fsck
 	use lvm modules root
 	after clock lvm modules root
 	keyword -docker -jail -lxc -prefix -systemd-nspawn -vserver
