@@ -4,6 +4,7 @@ app-misc/fdutils
 app-misc/mc
 app-shells/bash
 media-sound/mpg123
+sys-apps/kbd
 sys-apps/openrc
 sys-block/parted
 sys-fs/btrfs-progs
