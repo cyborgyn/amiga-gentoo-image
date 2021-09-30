@@ -1,6 +1,8 @@
 # Amiga Gentoo Linux image - Amilux
 This is a cross compiled HDF image of a stripped down, minimalistic Gentoo install specifically crafted towards Amiga hardwares.
 
+[Download](images)
+
 ## Features
 * Using MUSL instead of glibc
 * Using BusyBox instead of fat Linux userland programs
