@@ -1,0 +1,14 @@
+app-admin/metalog
+app-arch/lha
+app-misc/fdutils
+app-misc/mc
+app-shells/bash
+media-sound/mpg123
+sys-apps/openrc
+sys-block/parted
+sys-fs/btrfs-progs
+sys-fs/dosfstools
+sys-libs/musl
+sys-libs/timezone-data
+sys-process/cronie
+sys-process/htop

@@ -1,0 +1,3 @@
+ARCH="m68k"
+KERNEL="-linux linux"
+ELIBC="musl"

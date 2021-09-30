@@ -1,0 +1,7 @@
+=app-crypt/gnupg-2.2.29 ~m68k
+=dev-python/pypy3-7.3.5_p1 **
+=dev-python/setuptools-57.5.0 ~m68k
+dev-python/certifi ~m68k
+app-arch/lha ~m68k
+=media-libs/libglvnd-1.3.3 **
+=virtual/libcrypt-1-r1 ~m68k
