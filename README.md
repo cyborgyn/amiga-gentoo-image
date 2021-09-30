@@ -1,4 +1,4 @@
-# Amiga Gentoo Linux image
+# Amiga Gentoo Linux image - Amilux
 This is a cross compiled HDF image of a stripped down, minimalistic Gentoo install specifically crafted towards Amiga hardwares.
 
 ## Features
