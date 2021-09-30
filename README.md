@@ -3,6 +3,12 @@ This is a cross compiled HDF image of a stripped down, minimalistic Gentoo insta
 
 [Download](images)
 
+## How to run under WinUAE
+* Download WinUAE + Amiga A3000 3.1 KS ROM image
+* [Download](images/amilux.hdf.gz) the HDF image file, and extract it
+* [Download](images/amilux.uae) the UAE config file, and correct it's settings for the ROM image + HDF file location
+* Have fun!
+
 ## Features
 * Using MUSL instead of glibc
 * Using BusyBox instead of fat Linux userland programs
