@@ -22,6 +22,7 @@ This is a cross compiled HDF image of a stripped down, minimalistic Gentoo insta
 * Motorola 68030 CPU or better with MMU
 * At least 10 MByte 32bit FastRAM (in a single block)
 * SCSI or IDE HDD with 514MByte space
+
 **What will not work**
 * PCI hardware through bus extenders (no implemented driver in kernel)
 * BridgeBoards (no implemented driver in kernel)
