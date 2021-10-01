@@ -1,0 +1,4 @@
+-timidity
+# -context ez tenyleg nem mukodik (ASM)
+-qt5
+-X

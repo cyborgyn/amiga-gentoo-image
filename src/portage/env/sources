@@ -1,0 +1,2 @@
+FEATURES="${FEATURES} installsources"
+PORTAGE_TMPDIR="/usr/src"

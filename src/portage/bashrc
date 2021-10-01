@@ -1,0 +1,13 @@
+
+case ${CATEGORY}/${PN} in
+	sys-devel/distcc | sys-devel/gcc)
+	    if [ "${EBUILD_PHASE}" == "postinst" ]; then
+		/root/scripts/distcc-fix &
+	    fi
+	;;
+	dev-util/ccache | sys-devel/gcc)
+	    if [ "${EBUILD_PHASE}" == "postinst" ]; then
+		/root/scripts/ccache-fix &
+	    fi
+	;;
+esac

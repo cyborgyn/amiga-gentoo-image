@@ -1,0 +1,2 @@
+CFLAGS="-O3 -pipe -fomit-frame-pointer -fno-stack-protector -march=68030"
+CXXFLAGS="-O3 -pipe -fomit-frame-pointer -fno-stack-protector -march=68030"

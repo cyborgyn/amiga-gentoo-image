@@ -1,0 +1,5 @@
+# /etc/fstab: static file system information.
+/dev/sda1					/boot		affs		noauto,noatime		1 2
+UUID=a7ee33f9-04a8-44bb-b896-e7ed67d378c7	none		swap		sw			0 0
+UUID=ROOTUID	/		btrfs		noatime,subvol=@	0 1
+UUID=ROOTUID	/home		btrfs		noatime,subvol=@home	0 1

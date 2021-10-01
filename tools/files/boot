@@ -1,0 +1,1 @@
+c:amiboot-5.6 -k :Kernels/amilux-01 root=/dev/sda2 dobtrfs rootfstype=btrfs rootflags=subvol=@ init=/sbin/openrc-init
