@@ -1,0 +1,52 @@
+#!/bin/bash
+#-------------------------------------------------------------------------------------------
+# WARNING!!
+# This script needs to be run inside qemu-m68k user mode linux emulation chroot environment
+# 
+# It installes gentoo packages into a prefix folder, which defaults to /amilux/
+# Never set AMILUX variable to empty, or "/", it will damage your gentoo installation!
+# The target folder needs to be an empty btrfs subvolume
+#-------------------------------------------------------------------------------------------
+AMILUX=/amilux/
+
+if [ "$1" != "" ]; then
+    echo "Using $1..."
+    AMILUX=$1
+fi
+
+# -------------------------------
+# Install base programs
+# -------------------------------
+USE="make-symlinks" ROOT=${AMILUX} emerge @amilux_base
+ROOT=${AMILUX} emerge @amilux
+
+# -------------------------------
+# Create missing folders
+# -------------------------------
+mkdir ${AMILUX}{boot,home,root,mnt,dev,proc,sys}
+mkdir ${AMILUX}var/log
+
+# -------------------------------
+# Delete unnecessary files
+# -------------------------------
+rm ${AMILUX}/linuxrc
+rm -r ${AMILUX}etc/runlevel
+
+# -------------------------------
+# Copy over patched files
+# -------------------------------
+cp -af /build/src/root/* ${AMILUX}
+
+# -------------------------------
+# Last touches
+# -------------------------------
+passwd -R ${AMILUX} -d root
+ROOT=${AMILUX} env-update
+
+# -------------------------------
+# Install Kernel
+# -------------------------------
+pushd /usr/src/linux > /dev/null
+INSTALL_MOD_PATH=${AMILUX} make modules_install
+INSTALL_PATH=${AMILUX}boot/ make install
+popd > /dev/null
