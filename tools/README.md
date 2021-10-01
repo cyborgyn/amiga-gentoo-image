@@ -15,6 +15,7 @@ Also kudos goes to the creator(s) of a python based [amitools](https://github.co
 * some less standard ones (btrfs-progs)
 
 ## The tools
+
 1.) **amilux_install**: must be run in qemu-m68k chroot, to install programs & configure root fs
 2.) **mk-root.sh**: creates the Linux root filesystem, from a btrfs snapshot
 3.) **mk-boot.sh**: creates the amiga boot partition
