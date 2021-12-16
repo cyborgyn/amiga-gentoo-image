@@ -2,6 +2,7 @@ app-admin/metalog
 app-arch/lha
 app-misc/fdutils
 app-misc/mc
+app-portage/portage-utils
 app-shells/bash
 media-sound/mpg123
 sys-apps/kbd
