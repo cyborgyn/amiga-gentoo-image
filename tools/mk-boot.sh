@@ -5,7 +5,7 @@
 
 export PATH=$PATH:$HOME/.local/bin
 
-WB31DISK=../../wbench31.adf
+WB31DISK=../../../../wbench31.adf
 AMIBOOT=files/amiboot-5.6.gz
 GIGGLEDISK=files/giggledisk.lha
 FAT95=files/fat95.lha

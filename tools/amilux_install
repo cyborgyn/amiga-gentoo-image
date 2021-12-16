@@ -18,7 +18,10 @@ fi
 # Install base programs
 # -------------------------------
 USE="make-symlinks" ROOT=${AMILUX} emerge @amilux_base
+mkdir -p ${AMILUX}/etc/portage/sets
+cp /etc/portage/sets/amilux ${AMILUX}/etc/portage/sets/
 ROOT=${AMILUX} emerge @amilux
+#QMERGE=1 qmerge -K -y --root ${AMILUX} @amilux
 
 # -------------------------------
 # Create missing folders
@@ -30,7 +33,7 @@ mkdir ${AMILUX}var/log
 # Delete unnecessary files
 # -------------------------------
 rm ${AMILUX}/linuxrc
-rm -r ${AMILUX}etc/runlevel
+rm -r ${AMILUX}etc/runlevels
 
 # -------------------------------
 # Copy over patched files

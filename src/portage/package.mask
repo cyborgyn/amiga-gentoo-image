@@ -1,1 +1,3 @@
 #virtual/libiconv
+sys-fs/udev
+sys-fs/eudev
