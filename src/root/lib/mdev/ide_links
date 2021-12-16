@@ -1,0 +1,43 @@
+#!/bin/sh
+
+[ -f /proc/ide/$MDEV/media ] || exit
+
+media=`cat /proc/ide/$MDEV/media`
+for i in $media $media[0-9]* ; do
+	if [ "`readlink $i 2>/dev/null`" = $MDEV ] ; then
+		LINK=$i
+		break
+	fi
+done
+
+# link exist, remove if necessary and exit
+if [ "$LINK" ] ; then
+	[ "$ACTION" = remove ] && rm $LINK
+	exit
+fi
+
+# create a link
+#num=`ls $media[0-9]* 2>/dev/null | wc -l`
+#ln -sf $MDEV "$media`echo $num`"
+#[ -e "$media" ] || ln -sf $MDEV "$media"
+
+if ! [ -d "/dev/disk" ] ; then
+    mkdir /dev/disk
+    mkdir /dev/disk/by-uuid
+    mkdir /dev/disk/by-label
+fi
+
+for block_device in /sys/class/block/${MDEV}*; do
+    unset blkid_output LABEL UUID TYPE
+
+    block_device="${block_device##*/}"
+
+    blkid_output="$(blkid "/dev/${block_device}")"
+    [ "${blkid_output}" ] || continue
+
+    vars="${blkid_output#*:}"
+    eval "${vars}"
+
+    [ "${LABEL}" ] && ! [ -e "/dev/disk/by-label/${LABEL}" ] && ln -s "../../${block_device}" "/dev/disk/by-label/${LABEL}"
+    [ "${UUID}" ] && ! [ -e "/dev/disk/by-uuid/${UUID}" ] && ln -s "../../${block_device}" "/dev/disk/by-uuid/${UUID}"
+done
