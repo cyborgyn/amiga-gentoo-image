@@ -1,3 +1,6 @@
-#virtual/libiconv
 sys-fs/udev
 sys-fs/eudev
+# BTRFS-progs needs linux-headers too high
+# btrfs-progs > 5.10.1 doesn't build without libudev (and we are using mdev)
+>=sys-kernel/linux-headers-5.11
+>=sys-fs/btrfs-progs-5.11
