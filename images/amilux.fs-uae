@@ -1,0 +1,12 @@
+# FS-UAE configuration saved by FS-UAE Launcher
+# Last saved: 2022-09-26 00:18:55
+
+[fs-uae]
+accuracy = -1
+amiga_model = A3000
+chip_memory = 2048
+cpu = 68030
+hard_drive_0 = amilux.hdf
+hard_drive_0_controller = scsi0
+kickstart_file = Kickstart v3.1 rev 40.70 (1994)(Commodore)(A3000)[h ShapeShifter].rom
+motherboard_ram = 65536

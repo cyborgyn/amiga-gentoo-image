@@ -12,7 +12,7 @@ This is a cross compiled HDF image of a stripped down, minimalistic Gentoo insta
 ## Features
 * Using MUSL instead of glibc
 * Using BusyBox instead of fat Linux userland programs
-* Using mdev instead of used or eudev
+* Using mdev instead of udev or eudev
 * Boot partition is Amiga FFS, containing the kernel and boot loader (amiboot-5.6)
 * Linux root is BTRFS, with subvolumes
 * No package management installed inside
@@ -35,8 +35,8 @@ This is a cross compiled HDF image of a stripped down, minimalistic Gentoo insta
 * Amiga A4000D + A3660 CPU card + 16MByte RAM + IDE HDD
 
 ## Known issues
-* Midnight Commander freezes on exit
-  * workaround: on a different console, kill cons.save subprocess
+* ~~Midnight Commander freezes on exit~~
+  * ~~workaround: on a different console, kill cons.save subprocess~~
 * ~~rc-status SegFaults when displays supervised services~~
 * htop shows CPU load incorrectly in graphical manner
 * fdisk can't handle Amiga partition table

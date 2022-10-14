@@ -1,0 +1,6 @@
+FEATURES="${FEATURES} -distcc"
+CC="/usr/m68k-unknown-linux-musl/gcc-bin/10.4.0/gcc"
+CXX="/usr/m68k-unknown-linux-musl/gcc-bin/10.4.0/g++"
+AR="/usr/m68k-unknown-linux-musl/gcc-bin/10.4.0/gcc-ar"
+NM="/usr/m68k-unknown-linux-musl/gcc-bin/10.4.0/gcc-nm"
+RANLIB="/usr/m68k-unknown-linux-musl/gcc-bin/10.4.0/gcc-ranlib"

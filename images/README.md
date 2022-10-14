@@ -7,3 +7,4 @@
 * amilux.root.xz: Just the Linux root partition (can be copied to a partition with linux 'dd' command)
 * amilux.swap.xz: Empty Linux swap partition
 * **amilux.uae**: WinUAE 4.4.0 configuration file, to run the HDF image
+* **amilux.fs-uae**: FS-UAE 3.1.68 configuration file, to run the HDF image

@@ -5,7 +5,7 @@
 
 export PATH=$PATH:$HOME/.local/bin
 
-WB31DISK=../../../../wbench31.adf
+WB31DISK=files/wbench31.adf
 AMIBOOT=files/amiboot-5.6.gz
 GIGGLEDISK=files/giggledisk.lha
 FAT95=files/fat95.lha
@@ -23,6 +23,10 @@ xdftool $ABOOT_IMAGE_HDF makedir L
 xdftool $ABOOT_IMAGE_HDF makedir Libs
 xdftool $ABOOT_IMAGE_HDF makedir Kernels
 
+if [ ! -f $WB31DISK ]; then
+	echo "Error! Amiga WorkBench 3.1 disk image not found!"
+	exit 1
+fi
 
 # Extract minimal needed stuff from WB 3.1 Disk
 echo Extract minimal needed stuff from WB 3.1 Disk
