@@ -18,11 +18,19 @@ This is a cross compiled HDF image of a stripped down, minimalistic Gentoo insta
 * No package management installed inside
 * No build tools or generally build dependecies inside
 
+## What's new
+* Multiple kernels to choose from, at boot time:
+  * Linux 4.19: even printk is turned off, 6.3MByte memory usage after boot
+  * Linux 5.10: 9+MByte memory usage after boot, network support
+
 ## Requirements
 * Amiga OCS,ECS,AGA machine
 * Motorola 68030 CPU or better with MMU
 * At least 10 MByte 32bit FastRAM (in a single block)
 * SCSI or IDE HDD with 514MByte space
+
+**Optionally**
+* PLIP or SLIP cable/adapter/network card, for networking
 
 **What will not work**
 * PCI hardware through bus extenders (no implemented driver in kernel)
@@ -45,5 +53,8 @@ This is a cross compiled HDF image of a stripped down, minimalistic Gentoo insta
 * shutdown -h halts the kernel, but a few seconds later it Oops'es with stuck process (obvious: no software power down exists)
 * kernel uses just a single block of memory, amiboot is outdated, doesn't pass this to it
   * workaround (sort of): you can still use zorro2+chip RAM through /dev/z2ram block device (fe.: to create swap file)
+* Kernel drivers:
+  * Legacy IDE drivers works only, libata versions not 6.0
+  * SCSI drivers are not initialized timely in kernel 5.10, only in 4.19
 
 [@world installed packages](documentation/packages.md)

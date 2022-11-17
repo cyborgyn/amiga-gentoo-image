@@ -20,3 +20,4 @@ Also kudos goes to the creator(s) of a python based [amitools](https://github.co
 2) **mk-root.sh**: creates the Linux root filesystem, from a btrfs snapshot
 3) **mk-boot.sh**: creates the amiga boot partition
 4) **mk-hdf.sh**: combines everything together into a playable HDF image file
+opt) **update-docs.sh**: updates the list of installed packages

@@ -1,4 +1,5 @@
 ; Yes, it doesn't get simpler...
+C:2632
 C:SetPatch
-C:Assign T: RAM:
+; C:Assign T: RAM:
 type c:motd

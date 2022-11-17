@@ -1,0 +1,12 @@
+#!/sbin/openrc-run
+
+description="NTP daemon"
+pidfile=/var/run/${RC_SVCNAME}.pid
+supervisor=supervise-daemon
+
+command="/sbin/ntpd"
+command_args_foreground="-n"
+
+depend() {
+    need net-online
+}

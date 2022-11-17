@@ -5,6 +5,9 @@ app-misc/mc
 app-portage/portage-utils
 app-shells/bash
 media-sound/mpg123
+net-misc/openssh
+net-misc/dhcpcd
+net-misc/iperf
 sys-apps/kbd
 sys-apps/openrc
 sys-block/parted
