@@ -1,8 +1,15 @@
 #!/bin/bash
+
+BUILD=/storage/selly-build/root/amilux
+if [ "$1" != "" ]; then
+    echo "Using build root: '$1'"
+    BUILD=$1
+fi
+
 AMILUX_SET=`cat ../src/portage/sets/amilux`
 echo "# Installed packages in @world set" > ../documentation/packages.md
 (
-pushd /storage/selly-build/root/amilux/var/db/pkg > /dev/null
+pushd ${BUILD}/var/db/pkg > /dev/null
 for pkg in `ls -w0 -d */*` ; do
     DESC=`cat ${pkg}/DESCRIPTION`
     IS_IN_SET="false"

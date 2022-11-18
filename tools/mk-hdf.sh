@@ -33,9 +33,10 @@ ABOOT_START=`rdbtool $IMAGE_FILE_NAME info | grep -m 1 ABOOT | awk '{print $4}'`
 LNXROOT_START=`rdbtool $IMAGE_FILE_NAME info | grep -m 1 LNXROOT | awk '{print $4}'`
 LNXSWAP_START=`rdbtool $IMAGE_FILE_NAME info | grep -m 1 LNXSWAP | awk '{print $4}'`
 
-xz -d -c $ABOOT | dd of=$IMAGE_FILE_NAME conv=notrunc bs=$CYL_SIZE seek=$ABOOT_START status=none
-xz -d -c $LNXROOT | dd of=$IMAGE_FILE_NAME conv=notrunc bs=$CYL_SIZE seek=$LNXROOT_START status=none
-xz -d -c $LNXSWAP | dd of=$IMAGE_FILE_NAME conv=notrunc bs=$CYL_SIZE seek=$LNXSWAP_START status=none
+xz -d -c $ABOOT | dd of=$IMAGE_FILE_NAME conv=notrunc bs=$CYL_SIZE seek=$ABOOT_START status=progress
+xz -d -c $LNXROOT | dd of=$IMAGE_FILE_NAME conv=notrunc bs=$CYL_SIZE seek=$LNXROOT_START status=progress
+xz -d -c $LNXSWAP | dd of=$IMAGE_FILE_NAME conv=notrunc bs=$CYL_SIZE seek=$LNXSWAP_START status=progress
 
+echo "Compressing final image..."
 gzip $IMAGE_FILE_NAME
 mv $IMAGE_FILE_NAME.gz ../images/

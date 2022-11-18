@@ -1,0 +1,3 @@
+#!/bin/sh
+# Kernel cross compile wrapper. Use it instead of 'make' in kernel directory
+exec make ARCH="m68k" CROSS_COMPILE="m68k-unknown-linux-musl-" "$@"

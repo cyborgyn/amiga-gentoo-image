@@ -7,3 +7,4 @@ virtual/libcrypt		static-libs
 app-portage/portage-utils	-openmp -qmanifest -qtegrity
 media-libs/libglvnd		X
 dev-util/ostree			-gpg -soup -ssl
+sys-apps/net-tools		slattach

@@ -5,7 +5,8 @@
 # 
 # It installes gentoo packages into a prefix folder, which defaults to /amilux/
 # Never set AMILUX variable to empty, or "/", it will damage your gentoo installation!
-# The target folder needs to be an empty btrfs subvolume
+# The target folder needs to be an empty btrfs subvolume, which you can create:
+# btrfs subvol create /amilux
 #-------------------------------------------------------------------------------------------
 AMILUX=/amilux/
 
@@ -46,10 +47,4 @@ cp -af /build/src/root/* ${AMILUX}
 passwd -R ${AMILUX} -d root
 ROOT=${AMILUX} env-update
 
-# -------------------------------
-# Install Kernel
-# -------------------------------
-pushd /usr/src/linux > /dev/null
-INSTALL_MOD_PATH=${AMILUX} make modules_install
-INSTALL_PATH=${AMILUX}boot/ make install
-popd > /dev/null
+./kernel_install

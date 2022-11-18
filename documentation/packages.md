@@ -14,9 +14,8 @@
 * **app-misc/fdutils-5.5.20060227-r10**: utilities for configuring and debugging the Linux floppy driver
 * **app-misc/mc-4.8.28-r2**: GNU Midnight Commander is a text based file manager
 * app-misc/mime-types-2.1.53: Provides /etc/mime.types file
-* **app-portage/portage-utils-0.94.3**: Small and fast Portage helper tools written in C
 * **app-shells/bash-5.1_p16-r2**: The standard GNU Bourne again shell
-* dev-lang/python-3.10.8_p2: An interpreted, interactive, object-oriented programming language
+* dev-lang/python-3.10.8_p3: An interpreted, interactive, object-oriented programming language
 * dev-lang/python-exec-2.4.9: Python script wrapper
 * dev-lang/python-exec-conf-2.4.6: Configuration file for dev-lang/python-exec
 * dev-libs/expat-2.5.0: Stream-oriented XML parser library
@@ -31,17 +30,17 @@
 * dev-python/ensurepip-setuptools-65.5.1: Shared setuptools wheel for ensurepip Python module
 * dev-python/ensurepip-wheels-100: Shared wheels for ensurepip Python module
 * **media-sound/mpg123-1.30.2**: a realtime MPEG 1.0/2.0/2.5 audio player for layers 1, 2 and 3
-* **net-misc/dhcpcd-9.4.1**: A fully featured, yet light weight RFC2131 compliant DHCP client
 * **net-misc/iperf-3.11**: A TCP, UDP, and SCTP network bandwidth measurement tool
 * net-misc/netifrc-0.7.3: Gentoo Network Interface Management Scripts
 * **net-misc/openssh-9.0_p1-r6**: Port of OpenBSD's free SSH release
 * sys-apps/acl-2.3.1-r1: Access control list utilities, libraries, and headers
 * sys-apps/attr-2.5.1-r2: Extended attributes tools
-* sys-apps/baselayout-2.8: Filesystem baselayout and init scripts
+* sys-apps/baselayout-2.9: Filesystem baselayout and init scripts
 * sys-apps/busybox-1.34.1: Utilities for rescue and embedded systems
 * sys-apps/debianutils-5.7: A selection of tools from Debian
 * sys-apps/gentoo-functions-0.17: Base functions required by all Gentoo systems
 * **sys-apps/kbd-2.5.1**: Keyboard and console utilities
+* **sys-apps/net-tools-2.10**: Standard Linux networking tools
 * **sys-apps/openrc-0.45.2-r1**: OpenRC manages the services, startup and shutdown of a host
 * sys-apps/shadow-4.12.3: Utilities to deal with user accounts
 * sys-apps/systemd-utils-251.7: Utilities split out from systemd for OpenRC users

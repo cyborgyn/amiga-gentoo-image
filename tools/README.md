@@ -16,8 +16,20 @@ Also kudos goes to the creator(s) of a python based [amitools](https://github.co
 
 ## The tools
 
-1) **amilux_install**: must be run in qemu-m68k chroot, to install programs + configure root fs
-2) **mk-root.sh**: creates the Linux root filesystem, from a btrfs snapshot
-3) **mk-boot.sh**: creates the amiga boot partition
-4) **mk-hdf.sh**: combines everything together into a playable HDF image file
-opt) **update-docs.sh**: updates the list of installed packages
+1) Compile one or more kernels to include in the build
+1.1) use **m68kmake** inside the kernel dir to cross compile with m68k-unknown-linux-musl-gcc
+ # m68kmake menuconfig
+ # m68kmake -j12
+1.2) OR you can use the qemu-m68k chroot jail to compile kernel semi-natively, as usual
+2) **amilux_install**: must be run in qemu-m68k chroot, to install programs + configure root fs, also installs compiled kernels
+3) **mk-root.sh**: creates the Linux root filesystem, from a btrfs snapshot
+4) **mk-boot.sh**: creates the amiga boot partition
+5) **mk-hdf.sh**: combines everything together into a playable HDF image file
+6) (optional) **update-docs.sh**: updates the list of installed packages
+
+If you recompile kernel, and just want to rebuild that part, all you need to do is:
+1) Compile the kernel
+2) **kernel_install**: must be run in qemu-m68k chroot, to install kernel + modules
+4) (optional) **mk-root.sh**: if no modules changed, it's not necessary to run
+5) **mk-boot.sh**
+6) **mk-hdf.sh**

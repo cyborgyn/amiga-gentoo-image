@@ -4,4 +4,4 @@ sys-fs/eudev
 # btrfs-progs > 5.10.1 doesn't build without libudev (and we are using mdev)
 >=sys-kernel/linux-headers-5.11
 >=sys-fs/btrfs-progs-5.11
->=sys-kernel/gentoo-sources-4.20
+#>=sys-kernel/gentoo-sources-4.20

@@ -1,0 +1,25 @@
+#!/bin/bash
+#-------------------------------------------------------------------------------------------
+# WARNING!!
+# This script needs to be run inside qemu-m68k user mode linux emulation chroot environment
+# 
+# It installes compiled kernels into <prefix>/boot/ and modules into <prefix>/lib/modules
+#-------------------------------------------------------------------------------------------
+AMILUX=/amilux
+
+# -------------------------------
+# Install Kernel
+# -------------------------------
+for kerneldir in /usr/src/* ; do
+    if [ "$kerneldir" != "/usr/src/linux" ]; then
+        if [ -f "${kerneldir}/vmlinux" ]; then
+            echo "Found compiled kernel: ${kerneldir}"
+            pushd $kerneldir > /dev/null
+            INSTALL_PATH=${AMILUX}/boot/ make install
+            INSTALL_MOD_PATH=${AMILUX} make modules_install
+            popd > /dev/null
+            echo "Compiled kernel installed: ${kerneldir}"
+        fi
+    fi
+done
+rm ${AMILUX}/boot/*.old

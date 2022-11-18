@@ -3,6 +3,13 @@
 # This needs amitools from
 # https://github.com/cnvogelg/amitools
 
+BUILD=/storage/selly-build/root/amilux
+
+if [ "$1" != "" ]; then
+    echo "Using build root: '$1'"
+    BUILD=$1
+fi
+
 export PATH=$PATH:$HOME/.local/bin
 
 WB31DISK=files/wbench31.adf
@@ -88,8 +95,8 @@ xdftool $ABOOT_IMAGE_HDF write files/Startup-Sequence S/
 xdftool $ABOOT_IMAGE_HDF protect S/Startup-Sequence srwd
 
 # Copy one key boot script
-rm /storage/selly-build/root/amilux/boot/*.old
-KERNELS=( `ls -w0 /storage/selly-build/root/amilux/boot/vmlinuz*-amilux-*` )
+rm ${BUILD}/boot/*.old
+KERNELS=( `ls -w0 ${BUILD}/boot/vmlinuz*-amilux-*` )
 LAST_KERNEL=""
 for KERNEL in ${KERNELS[@]}; do
     LAST_KERNEL=`echo ${KERNEL} | sed -n 's/.*vmlinuz-\([0-9\.]\+\)-.*amilux-\([0-9]\+\).*/amilux-\2-\1/p'`
