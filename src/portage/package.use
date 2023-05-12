@@ -3,7 +3,6 @@ sys-apps/openrc			sysv-utils
 sys-apps/util-linux		fdformat
 >=sys-libs/ncurses-6.2-r1	unicode
 media-video/mplayer		-dvd -dvdnav -network -enca -osdmenu -xscreensaver fbcon mp3 -truetype -xv -libass -cdio
-virtual/libcrypt		static-libs
 app-portage/portage-utils	-openmp -qmanifest -qtegrity
 media-libs/libglvnd		X
 dev-util/ostree			-gpg -soup -ssl
