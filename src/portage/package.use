@@ -7,3 +7,5 @@ app-portage/portage-utils	-openmp -qmanifest -qtegrity
 media-libs/libglvnd		X
 dev-util/ostree			-gpg -soup -ssl
 sys-apps/net-tools		slattach
+virtual/libcrypt		static-libs
+sys-libs/libxcrypt		static-libs
